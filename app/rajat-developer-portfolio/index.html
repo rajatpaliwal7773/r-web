@@ -1,35 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Developer Portfolio Sample</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rajat Paliwal — Digital Resume (Updated)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #555;
+      --primary: #2563eb;
+      --card: #f7f7f9;
+      --border: #e6e6eb;
+      --accent: #10b981;
+    }
+    [data-theme="dark"] {
+      --bg: #0f172a;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --primary: #60a5fa;
+      --card: #111827;
+      --border: #1f2937;
+      --accent: #34d399;
+    }
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 1000px; margin: auto; padding: 24px;}
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 2px solid var(--border); padding-bottom: 16px; margin-bottom: 24px;
+    }
+    .title h1 { margin: 0; font-size: 32px; font-weight: 700; }
+    .title p { margin: 4px 0; color: var(--muted); }
+    .btn { padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+    .btn.primary { background: var(--primary); color: #fff; }
+    section { margin-bottom: 24px; }
+    h3 { margin-bottom: 12px; color: var(--primary); }
+    .card { background: var(--card); padding: 16px; border-radius: 8px; border: 1px solid var(--border); }
+    ul { padding-left: 20px; }
+    .timeline .event { margin-bottom: 12px; }
+    .skills .bar { height: 10px; background: #e5e7eb; border-radius: 6px; overflow: hidden; }
+    .skills .fill { height: 100%; background: var(--accent); }
+    
+    /* --- प्रोजेक्ट सेक्शन स्टाइलिंग (Project Section Styling) --- */
+    .tech-stack { 
+      display: block; 
+      margin-top: 5px; 
+      color: var(--muted); 
+      font-size: 0.9em; 
+      font-weight: 600;
+    }
+    .project-actions {
+      margin-top: 15px;
+      display: flex;
+      gap: 10px;
+    }
+    .project-btn {
+      padding: 6px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+    .primary-btn {
+      background: var(--primary);
+      color: white;
+    }
+    .primary-btn:hover {
+      background: #1d4ed8;
+    }
+    .secondary-btn {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .secondary-btn:hover {
+      background: var(--border);
+    }
+
+    /* --- फ़ोन और टैबलेट के लिए नियम (Mobile Responsiveness) --- */
+    @media (max-width: 768px) {
+      /* मुख्य हिस्से की पैडिंग (जगह) कम करें */
+      .container { max-width: 100%; padding: 16px; }
+
+      /* हैडर (ऊपरी हिस्सा) को मोबाइल के हिसाब से बदलें */
+      header {
+        flex-direction: column; /* चीज़ों को एक के नीचे एक रखें */
+        align-items: flex-start; /* टेक्स्ट को बाईं ओर शुरू करें */
+        gap: 10px; /* सेक्शन के बीच थोड़ी जगह */
+      }
+      
+      /* बड़ी हेडलाइन का फ़ॉन्ट साइज़ छोटा करें */
+      .title h1 { font-size: 28px; }
+      .title p { font-size: 14px; }
+      
+      /* बटन को पूरी चौड़ाई में फैलाएं */
+      .actions {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        width: 100%;
+        justify-content: space-between;
+      }
+      
+      /* छोटी स्क्रीन पर पढ़ने में आसानी के लिए फ़ॉन्ट साइज़ ठीक करें */
+      section p, section li {
+        font-size: 15px;
+      }
+    }
+
+    @media print { .btn { display: none; } }
+  </style>
 </head>
 <body>
+  <div class="container">
+<header>
+  <img class="avatar" src="123.jpg" alt="Rajat Paliwal" /> 
+  <div class="title">
+    <h1>Rajat Paliwal</h1>
+    <p>30, Meera Nagar, Nathdwara, Rajsamand, Rajasthan (313301)</p>
+    <p>DOB: 29/01/2005</p>
+    <p>Email: rajatpaliwal06@gmail.com | Phone: +91-8529950897</p>
+  </div>
+  <div class="actions">
+    <button class="btn" id="themeToggle">Toggle Theme</button>
+    <button class="btn primary" onclick="window.print()">Save as PDF</button>
+  </div>
+</header>
+    <section class="card">
+      <h3>Education</h3>
+      <div class="timeline">
+        <div class="event">
+          <strong>B.Tech Computer Science</strong><br>
+          Shrinathji Institute of Technology & Engineering, Nathdwara, Rajsamand<br>
+          University: RTU Kota | Expected Graduation: 2027
+        </div>
+        <div class="event">
+          <strong>Intermediate (Grade 12)</strong><br>
+          Swami Vivekanand Govt. Model School, Sema, Khamnor<br>
+         CBSE Board | Year: 2023 | Percentage: 58.80%
+        </div>
+        <div class="event">
+          <strong>Secondary Education (Grade 10)</strong><br>
+          Shreeji Public Senior Secondary School, Nathdwara<br>
+          RBSE Board | Year: 2021 | Percentage: 82.00%
+        </div>
+      </div>
+    </section>
 
-    <header class="hero-section">
-        <h1>Hello, World! I am a Web Developer.</h1>
-        <p>This is my first professional static deployment hosted on Netlify.</p>
-    </header>
+    <section class="card">
+      <h3>Projects</h3>
+      <ul class="project-list">
+        <li class="project-item">
+          <strong>Gesture-Controlled Car</strong> (Engineers Day 2024)<br>
+          <span class="tech-stack">Arduino | Gyro Sensor | C++</span><br>
+          • Developed a gesture-controlled car using Arduino and gyro sensor.<br>
+          • Integrated sensor data to translate gestures into real-time commands.
+          <div class="project-actions">
+            <a href="https://github.com/rajatpaliwal7773/r-web" target="_blank" class="project-btn primary-btn">GitHub Repo</a>
+            <a href="#" class="project-btn secondary-btn" disabled>Live Demo (N/A)</a>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-    <main class="container">
-        <section class="card">
-            <h2>Core Technologies</h2>
-            <p>This project utilizes **HTML5** for structure, **CSS3** for presentation, and **Vanilla JavaScript** for DOM manipulation.</p>
-            <button id="colorChangerButton">Toggle Dark Mode</button>
-        </section>
-        
-        <section class="card status-panel">
-            <h2>Deployment Status</h2>
-            <p id="statusMessage">Awaiting user interaction.</p>
-        </section>
-    </main>
+  <section class="card">
+  <h3>Computer Skills</h3>
+  <ul>
+    <li>C / C++ (Intermediate)</li>
+    <li>Python (Intermediate)</li>
+    <li>Web Development: HTML, CSS</li>
+    <li>Backend Development: Node.js, Express.js, MySQL</li>
+    <li>Office Tools: PPT, Word, Excel</li>
+  </ul>
+</section>
+<section class="card">
+      <h3>Languages</h3>
+      <ul>
+        <li>Hindi (Fluent)</li>
+        <li>English (Intermediate)</li>
+        <li>Rajasthani (Fluent)</li>
+      </ul>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Professional Developer. All Rights Reserved.</p>
-    </footer>
+    <section class="card">
+     
+      <h3>Certifications</h3>
+      <ul>
+        <li>Web Development with ReactJS — Robotronix India (Oct 9–28, 2023)</li>
+        <li>Python Training — NIMO Labs Udaipur (Jul 15–Aug 15, 2024)</li>
+        <li>Rajasthan State Certificate in Information Technology (74%) — VMOU Kota (Jul 2019)</li>
+      </ul>
+    </section>
 
-    <script src="script.js" defer></script>
+    <section class="card">
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>Leadership</li>
+        <li>Communication</li>
+        <li>Teamwork</li>
+        <li>Problem-solving</li>
+      </ul>
+    </section>
+    <section class="card">
+  <h3>Experience</h3>
+  <ul>
+    <li>
+      <strong>School Management (1 Year)</strong><br>
+      Managed administrative and operational tasks for a school, including coordination between staff, students, and parents.<br>
+      Responsibilities: Scheduling, record keeping, event organization, and communication management.
+    </li>
+  </ul>
+</section>
+  </div>
+
+  <script>
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', current);
+    });
+  </script>
 </body>
 </html>
