@@ -3,173 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajat Paliwal | rajat@developer</title>
+    <title>Web Developer Portfolio Sample</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-   <header id="navbar">
-    <div class="container nav-container">
-        <div class="logo">
-            <a href="#home">rajat<span class="logo-highlight">@developer</span></a>
-        </div>
 
-        <nav class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-            <a href="path/to/your/resume.pdf" target="_blank" class="nav-resume-btn">Resume ⬇️</a>
-        </nav>
+    <header class="hero-section">
+        <h1>Hello, World! I am a Web Developer.</h1>
+        <p>This is my first professional static deployment hosted on Netlify.</p>
+    </header>
 
-        </div>
-</header>
-        </header>
-
-    <main>
-       <section id="home" class="hero">
-    <div class="container">
-        <h1 class="hero-title">
-            Hi, I'm **Rajat Paliwal**.
-        </h1>
+    <main class="container">
+        <section class="card">
+            <h2>Core Technologies</h2>
+            <p>This project utilizes **HTML5** for structure, **CSS3** for presentation, and **Vanilla JavaScript** for DOM manipulation.</p>
+            <button id="colorChangerButton">Toggle Dark Mode</button>
+        </section>
         
-        <p class="hero-subtitle">
-            A B.Tech Computer Science student specializing in
-            <span class="highlight">Full-Stack Development</span> 
-            with **Node.js** and **ReactJS**.
-        </p>
-
-        <p class="hero-tagline">
-            Let's build modern, robust, and scalable solutions together.
-        </p>
-
-        <div class="hero-actions">
-            <a href="#projects" class="btn primary-btn">View My Projects</a>
-            <a href="#contact" class="btn secondary-btn">Get In Touch</a>
-        </div>
-    </div>
-</section>
-            </section>
-
-        <section id="skills" class="skills">
-    <div class="container">
-        <h2>Technical Skills</h2>
-        
-        <div class="skills-grid">
-            
-            <div class="skill-card">
-                <h3>Frontend Development</h3>
-                <ul>
-                    <li>HTML5 & CSS3</li>
-                    <li>ReactJS (Certified Training)</li>
-                    <li>Modern CSS (Tailwind CSS/Bootstrap concepts)</li>
-                </ul>
-            </div>
-
-            <div class="skill-card">
-                <h3>Backend & Logic</h3>
-                <ul>
-                    <li>Node.js & Express.js (Backend)</li>
-                    <li>Python (Trained - Intermediate)</li>
-                    <li>C / C++ (Intermediate)</li>
-                </ul>
-            </div>
-
-            <div class="skill-card">
-                <h3>Database & Tools</h3>
-                <ul>
-                    <li>MySQL</li>
-                    <li>Arduino / Microcontroller Programming</li>
-                    <li>Git (Version Control - Essential for Devs)</li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-</section>
-            </section>
-
-        <section id="projects" class="projects">
-    <div class="container">
-        <h2>Featured Projects</h2>
-        
-        <div class="project-card">
-            <h3 class="project-title">Gesture-Controlled Car</h3>
-            <p class="project-tech">
-                **Technologies Used:** Arduino, Gyro Sensor, Microcontroller Programming (C/C++)
-            </p>
-            <p class="project-description">
-                A hands-on embedded systems project developed for **Engineers Day 2024**, demonstrating real-time control of a robotic car using human hand gestures detected by a Gyro Sensor.
-            </p>
-            <ul class="project-details">
-                <li>**Core Functionality:** Integrated sensor data from the Gyro Sensor to translate hand tilts and movements into precise commands (forward, backward, turn) for the microcontroller.</li>
-                <li>**Skills Applied:** Deep understanding of Arduino platform, physical computing, and writing efficient C/C++ code for hardware control.</li>
-            </ul>
-            
-            <div class="project-links">
-                <a href="#" class="project-btn github-btn disabled-link">
-                    GitHub Link (To be added)
-                </a>
-                <a href="#" class="project-btn demo-btn disabled-link">
-                    Live Demo (N/A for hardware project)
-                </a>
-            </div>
-        </div>
-
-        <div class="project-placeholder">
-            <p>
-                **Future Goal:** To add more full-stack web projects built with **Node.js, Express.js, and ReactJS** soon!
-            </p>
-        </div>
-        
-    </div>
-</section>
-            </section>
-
-        <section id="contact" class="contact">
-    <div class="container">
-        <h2>Get In Touch</h2>
-        <p class="contact-tagline">
-            I am currently open to exciting B.Tech projects and full-stack opportunities. Feel free to connect!
-        </p>
-
-        <div class="contact-info">
-            <div class="contact-item">
-                <span class="contact-icon">📧</span>
-                <p>Email Me:</p>
-                <a href="mailto:rajatpaliwal06@gmail.com" class="contact-link">rajatpaliwal06@gmail.com</a>
-            </div>
-
-            <div class="contact-item">
-                <span class="contact-icon">📞</span>
-                <p>Call Me:</p>
-                <a href="tel:+918529950897" class="contact-link">+91-8529950897</a>
-            </div>
-
-            <div class="contact-item">
-                <span class="contact-icon">📍</span>
-                <p>Location:</p>
-                <p class="contact-link">Nathdwara, Rajasthan (313301)</p>
-            </div>
-        </div>
-        
-    </div>
-</section>
-            </section>
+        <section class="card status-panel">
+            <h2>Deployment Status</h2>
+            <p id="statusMessage">Awaiting user interaction.</p>
+        </section>
     </main>
 
-    <footer><footer>
-    <div class="container footer-content">
-        <p>&copy; 2025 Rajat Paliwal | rajat@developer. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://github.com/YourUsername" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/YourUsername" target="_blank">LinkedIn</a>
-        </div>
-    </div>
-</footer>
-        </footer>
+    <footer>
+        <p>&copy; 2025 Professional Developer. All Rights Reserved.</p>
+    </footer>
 
-    <script src="js/script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
